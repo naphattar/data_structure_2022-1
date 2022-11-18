@@ -330,23 +330,27 @@ class map_bst
 }
 
 //you can add other function as well BUT CANNOT MODIFY MAIN nor map_bst class
-
+void binary_search(int left,int right,CP::map_bst<int,int> &bst){
+  int mid = (left+right)/2;
+  bst[mid] = 1;
+  if(left == right){ // we're done here
+    return;
+  }
+  binary_search(left,mid,bst);
+  binary_search(mid+1,right,bst);
+}
 void gen_best_bst(int n,CP::map_bst<int,int> &bst) {
   //write your code here
   //you can create additional function
   //but you cannot modify main or the map_bst class
-
-  // this is the example code of adding 1..n to the bst in ascending order
-  for (int i = 1;i <= n;i++) {
-    bst[i] = 100;
-  }
+  binary_search(1,n,bst);
 }
 
 int main() {
   int k;
   int n;
   std::cin >> k;
-  n = (2 << k) - 1;
+  n = (2 << k) - 1; // n become 2^(k+1)-1
   CP::map_bst<int,int> bst;
   gen_best_bst(n,bst);
   bst.print_key_preorder();

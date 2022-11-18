@@ -2,11 +2,16 @@
 #include <assert.h>
 #include "list.h"
 #include <string>
+#include<fstream>
 using namespace std;
 
 
 int main() {
   int n,k;
+  std::ifstream in("input.txt");
+  std::cin.rdbuf(in.rdbuf());
+  std::ofstream out("output.txt");
+  std::cout.rdbuf(out.rdbuf());
   CP::list<int> l;
   std::cin >> n;
   while (n--) {

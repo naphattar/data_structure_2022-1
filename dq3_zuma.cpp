@@ -50,6 +50,7 @@ int main(){
     }
     // for debugging
     /*
+    cout << endl;
     cout << "zfront: ";
     for(auto it = zfront.begin();it != zfront.end();it++){
         cout << *it << " ";

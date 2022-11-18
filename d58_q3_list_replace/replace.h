@@ -1,5 +1,6 @@
 void replace(const T& x, list<T>& y) {
   //write your code here
+  /*
   iterator it = begin();
   while(it != end()){
     node * n = it.ptr;
@@ -14,5 +15,18 @@ void replace(const T& x, list<T>& y) {
       it++;
     }
   }
+  */
+ int k = mSize;
+ node* rf = mHeader;
+ for(int i = 0;i<k;i++){
+  rf = rf->next;
+  if(rf->data == x){
+    list<T> cy = y;
+    mSize += y.size()-1;
+  }
+  //std::cout << "this is checklist for i = " << i << " : ";
+  //print();
+  //std::cout << std::endl;
+ }
 
 }

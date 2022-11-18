@@ -1,7 +1,6 @@
 void shift(int k) {
-	if(mSize == 0){return;}
+	if(mSize <=1 ){return;}
 	if(k%mSize == 0){return;}
-	iterator it = begin();
 	if(k > 0){
 		k = k%mSize;
 	}else{
@@ -9,7 +8,8 @@ void shift(int k) {
 		k = k%mSize;
 		k = mSize-k;
 	}
-	while(k--){
+	iterator it = begin();
+	for(int i = 0;i<k;i++){
 		it++;
 	}
 	node* nd = it.ptr;
@@ -19,4 +19,5 @@ void shift(int k) {
 	nd->prev->next = mHeader;
 	mHeader->next = nd;
 	nd->prev = mHeader;
+
 }

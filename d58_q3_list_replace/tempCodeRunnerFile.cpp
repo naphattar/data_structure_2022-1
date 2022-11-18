@@ -1,0 +1,1 @@
+node *n = new node(element, it.ptr->prev, it.ptr);
